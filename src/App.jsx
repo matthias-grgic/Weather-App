@@ -20,7 +20,7 @@ function App() {
 export default App
 
 const Website = styled.div`
-  /* background-image: url(${BackgroundImg}); */
+  background-image: url('https://picsum.photos/300/700?grayscale?blur');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
