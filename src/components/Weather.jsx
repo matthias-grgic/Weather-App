@@ -41,6 +41,7 @@ const Wrapper = styled.section`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
   input[type='text'] {
     background-color: rgba(255, 255, 255, 0.4);
     font-size: 1rem;

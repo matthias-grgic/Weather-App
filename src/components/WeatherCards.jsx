@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { TailSpin } from 'react-loader-spinner'
 
 export default function WeatherCard({ apiData, isLoaded }) {
   if (isLoaded === true) {
@@ -11,7 +12,7 @@ export default function WeatherCard({ apiData, isLoaded }) {
           </svg>{' '}
           {apiData.description}
         </Sky>
-        <Temperature>{apiData.temperature}</Temperature>
+        <Temperature>{apiData.temperature ? apiData.temperature : <TailSpin color='#00BFFF' height={40} width={40} />}</Temperature>
         <Wind>
           <svg xmlns='http://www.w3.org/2000/svg' width='30%' viewBox='0 0 512 512' xmlSpace='preserve' fill='white'>
             <path d='M437.313 189.201c-7.88-83.684-78.535-149.379-164.246-149.379S116.702 105.518 108.82 189.201c-42.422 7.72-74.687 44.94-74.687 89.555h34.133c0-31.369 25.52-56.889 56.889-56.889h17.067V204.8c0-72.148 58.697-130.844 130.844-130.844S403.911 132.652 403.911 204.8v17.067h17.067c31.369 0 56.889 25.52 56.889 56.889s-25.52 56.889-56.889 56.889h-85.333v34.133h85.333c50.19 0 91.022-40.833 91.022-91.022 0-44.615-32.265-81.835-74.687-89.555zM204.8 347.022H0v34.133h204.8c15.684 0 28.444 12.76 28.444 28.444s-12.76 28.444-28.444 28.444-28.444-12.76-28.444-28.444h-34.133c0 34.505 28.072 62.578 62.578 62.578s62.578-28.072 62.578-62.578c-.001-34.504-28.074-62.577-62.579-62.577z' />
