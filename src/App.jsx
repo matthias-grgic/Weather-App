@@ -1,16 +1,16 @@
 // import styled from 'styled-components'
-import Header from './components/src/Header'
-import Welcome from './components/src/Welcome'
-import Introduction from './components/src/Introduction'
-import SlideShow from './components/src/SlideShow'
-import BackgroundImg from './components/src/img/back.jpg'
+import Header from './components/Header'
+import Weather from './components/Weather'
+import Introduction from './components/Introduction'
+import SlideShow from './components/SlideShow'
+import BackgroundImg from './components/img/back.jpg'
 import styled from 'styled-components'
 
 function App() {
   return (
     <Website>
       <Header />
-      <Welcome />
+      <Weather />
       <Introduction />
       <SlideShow />
     </Website>
@@ -20,7 +20,10 @@ function App() {
 export default App
 
 const Website = styled.div`
-  background-image: url(${BackgroundImg});
+  /* background-image: url(${BackgroundImg}); */
+  background-position: center;
   background-size: cover;
-  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 `

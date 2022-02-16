@@ -11,9 +11,10 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'prettier'],
   rules: {
     'comma-dangle': 'off',
     'space-before-function-paren': 0,
+    'react/prop-types': 'off',
   },
 }

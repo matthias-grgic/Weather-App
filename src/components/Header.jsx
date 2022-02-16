@@ -15,5 +15,4 @@ const Text = styled.h1`
 
 const Wrapper = styled.section`
   padding: 2em 4em 1em 4em;
-  background: #ffffff;
 `

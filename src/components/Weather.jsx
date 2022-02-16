@@ -1,10 +1,13 @@
 import styled from 'styled-components'
-import FetchFromApi from '../lib/fetchApi'
+import FetchFromApi from './lib/fetchApi'
 import { useState } from 'react'
+import WeatherCard from './WeatherCards'
 
 export default function Welcome() {
   const [apiData, setApiData] = useState([])
   const [city, setCity] = useState('')
+  const [showCard, setShowCard] = useState(false)
+  const [cityPhoto, setCityPhoto] = useState([])
 
   const handleInput = (event) => {
     event.preventDefault()
@@ -14,7 +17,11 @@ export default function Welcome() {
   const submitHandler = (event) => {
     event.preventDefault()
     FetchFromApi(`https://goweather.herokuapp.com/weather/${city}`, setApiData)
+    FetchFromApi(`https://imsea.herokuapp.com/api/1?q=Frankfurt`, setCityPhoto)
+    setShowCard(true)
   }
+
+  console.log(cityPhoto)
 
   return (
     <Wrapper>
@@ -55,33 +62,10 @@ export default function Welcome() {
       <Form onSubmit={submitHandler}>
         <input type='text' onChange={handleInput} value={city} />
       </Form>
-      <Text>
-        <Description>City:</Description>
-        <div>{city}</div>
-      </Text>
-      <Text>
-        <Description>Temp:</Description>
-        <div>{apiData.temperature}</div>
-      </Text>
-      <Text>
-        <Description>Wind:</Description>
-        <div>{apiData.wind}</div>
-      </Text>
-      <Text>
-        <Description>Sky:</Description>
-        <div>{apiData.description}</div>
-      </Text>
+      <WeatherCard apiData={apiData} city={city} isLoaded={showCard} />
     </Wrapper>
   )
 }
-
-const Description = styled.div``
-
-const Text = styled.section`
-  display: flex;
-  color: palevioletred;
-  gap: 20px;
-`
 
 const Wrapper = styled.section`
   display: flex;
@@ -106,13 +90,9 @@ const Form = styled.form`
     margin: 0 0 25px 0;
     padding: 12px 20px;
   }
-  textarea {
-    height: 80px;
-    resize: none;
-  }
 `
 
 const SvgStyled = styled.svg`
   width: 5em;
-  margin: 2em;
+  margin: 0em 2em 2em 2em;
 `
