@@ -1,7 +1,7 @@
 # Weather-app
 
 Made with `React, React Router, styled-components, ESLint, Lottie, WeatherApi`
-try it out
+try it out - mobile version only right now
 
 # Install
 
