@@ -7,7 +7,6 @@ export default function Welcome() {
   const [apiData, setApiData] = useState([])
   const [city, setCity] = useState('')
   const [showCard, setShowCard] = useState(false)
-  const [cityPhoto, setCityPhoto] = useState([])
 
   const handleInput = (event) => {
     event.preventDefault()
@@ -17,11 +16,8 @@ export default function Welcome() {
   const submitHandler = (event) => {
     event.preventDefault()
     FetchFromApi(`https://goweather.herokuapp.com/weather/${city}`, setApiData)
-    FetchFromApi(`https://imsea.herokuapp.com/api/1?q=Frankfurt`, setCityPhoto)
     setShowCard(true)
   }
-
-  console.log(cityPhoto)
 
   return (
     <Wrapper>

@@ -4,7 +4,7 @@ export default function WeatherCard({ apiData, city, isLoaded }) {
   if (isLoaded === true) {
     return (
       <WeatherContainer>
-        <City>{city} </City>
+        <City></City>
         <Sky>{apiData.description}</Sky>
         <Temperature>{apiData.temperature}</Temperature>
         <Wind>{apiData.wind}</Wind>
@@ -24,26 +24,27 @@ const WeatherContainer = styled.div`
     'Temperature Sky'
     'Temperature wind'
     'Temperature City';
+  padding: 2em;
 `
 
 const City = styled.div`
-  font-weight: 200;
+  font-weight: 300;
   grid-area: City;
 `
 
 const Sky = styled.div`
-  font-weight: 200;
+  font-weight: 300;
   grid-area: Sky;
 `
 
 const Temperature = styled.div`
   font-family: Roboto;
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 500;
   grid-area: Temperature;
 `
 
 const Wind = styled.div`
-  font-weight: 200;
+  font-weight: 300;
   grid-area: wind;
 `
