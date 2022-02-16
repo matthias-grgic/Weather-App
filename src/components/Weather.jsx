@@ -14,7 +14,7 @@ export default function Welcome() {
     setCity(event.target.value)
   }
 
-  const API_KEY = process.env.REACT_APP_API_KEY
+  const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY
 
   const submitHandler = (event) => {
     event.preventDefault()
