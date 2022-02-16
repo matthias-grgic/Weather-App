@@ -5,7 +5,7 @@ import WeatherCard from './WeatherCards'
 import LottieAnimation from './LottieAnimation'
 
 export default function Welcome() {
-  const [apiData, setApiData] = useState([])
+  const [apiData, setApiData] = useState({})
   const [city, setCity] = useState('')
   const [showCard, setShowCard] = useState(false)
 
@@ -16,8 +16,7 @@ export default function Welcome() {
 
   const submitHandler = (event) => {
     event.preventDefault()
-    FetchFromApi(`https://goweather.herokuapp.com/weather/${city}`, setApiData)
-    setShowCard(true)
+    FetchFromApi(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=02cb0fe60f679472c69a3e7d2dbd06b7`, setApiData).then(() => setShowCard(true))
   }
 
   return (
