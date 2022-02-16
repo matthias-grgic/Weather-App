@@ -1,7 +1,7 @@
 import { useLottie } from 'lottie-react'
 
 const style = {
-  width: '50%',
+  width: '9rem',
   opacity: 0.8,
 }
 

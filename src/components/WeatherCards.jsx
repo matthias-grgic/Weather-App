@@ -5,12 +5,13 @@ export default function WeatherCard({ apiData, isLoaded }) {
   if (isLoaded === true) {
     return (
       <WeatherContainer>
+        <City>{apiData.name}</City>
         <Sky>
           <svg xmlns='http://www.w3.org/2000/svg' width='30%' viewBox='0 0 431.656 431.656' fill='white'>
             <path d='M355.652 157.428c-3.2-1.2-6-4-7.2-7.6-18.4-54-68.8-90-125.2-90-72.8 0-132 59.2-132 132 0 2.4 0 5.2.4 8 0 1.2-.4 2.4-1.2 3.6-.8.8-1.6 1.2-2.4 1.2h-4c-23.2 0-44.4 9.2-60.4 25.6-16 16.4-24.4 38.4-23.6 61.2.8 44.4 39.2 80.4 85.2 80.4h234c61.2 0 111.6-48.4 112.4-108.4.4-48.4-30-90.8-76-106zm-36.4 198.4h-234c-37.2 0-68.4-29.2-69.6-65.2-.8-18.4 6-36 18.8-49.6 12.8-13.6 30.4-20.8 49.2-20.8h3.6c5.6.4 10.8-1.6 14.4-5.6 4-4 6.4-10 6-16v-.8c-.4-2-.4-4-.4-6 0-64 52-116 116-116 49.6 0 94 31.6 110 78.8 2.8 8.8 9.2 15.2 17.6 18 39.2 12.8 65.2 49.2 64.8 90.8-.8 50.8-44 92.4-96.4 92.4z' />
             <path d='M149.652 171.828c-4.4-.8-8.4 2-9.6 6.4-.8 4.8-.8 9.2-.8 13.6s3.6 8 8 8 8-3.6 8-8c0-3.6 0-7.2.8-10.4.8-4.4-2-8.4-6.4-9.6zM249.652 112.228c-9.2-2.8-18-4.4-26.4-4.4-25.2 0-48.8 11.2-65.2 30.8-2.8 3.6-2.4 8.4 1.2 11.2 1.6 1.2 3.2 1.6 5.2 1.6 2.4 0 4.8-1.2 6.4-2.8 12.8-16 32-25.2 52.4-25.2 6.8 0 14 1.2 21.6 3.6 4.4 1.2 8.8-1.2 10-5.2 1.2-4-.8-8.4-5.2-9.6z' />
           </svg>{' '}
-          {apiData.weather[0].description}
+          {apiData.weather[0].main}
         </Sky>
         <Temperature>{apiData.main.temp ? Math.round(apiData.main.temp) + '°C' : <TailSpin color='#00BFFF' height={40} width={40} />}</Temperature>
         <Wind>
@@ -26,23 +27,13 @@ export default function WeatherCard({ apiData, isLoaded }) {
   return <></>
 }
 
-const Sky = styled.div`
-  font-weight: 300;
-  grid-area: Sky;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 10px;
-`
-
 const Temperature = styled.div`
   font-family: Roboto;
-  font-size: 3.5rem;
+  font-size: 5rem;
   font-weight: 500;
   grid-area: Temperature;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 `
 
@@ -51,21 +42,32 @@ const WeatherContainer = styled.div`
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1.5fr 1fr 1.2fr;
-  gap: 23px 10px;
+  gap: 23px 5px;
   grid-auto-flow: row;
   grid-template-areas:
     'Temperature Sky'
     'Temperature wind'
     'Temperature City';
   justify-content: space-evenly;
-  padding: 1em;
+  padding: 0.2em;
 `
 
-const Wind = styled.div`
+const Sky = styled.div`
+  font-size: 1rem;
   font-weight: 300;
-  grid-area: wind;
+  grid-area: Sky;
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 10px;
+`
+
+const City = styled(Sky)`
+  grid-area: City;
+  font-weight: 500;
+  text-transform: uppercase;
+`
+
+const Wind = styled(Sky)`
+  grid-area: wind;
 `

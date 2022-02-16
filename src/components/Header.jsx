@@ -10,8 +10,9 @@ export default function Header() {
 
 const Text = styled.h1`
   text-align: center;
-  color: #ffffee;
+  color: #ffffff;
   font-size: 3rem;
+  font-family: Righteous;
 `
 
 const Wrapper = styled.section`
