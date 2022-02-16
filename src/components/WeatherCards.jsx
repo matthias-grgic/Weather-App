@@ -42,7 +42,7 @@ const WeatherContainer = styled.div`
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 1.5fr 1fr 1.2fr;
-  gap: 23px 5px;
+  gap: 2px 5px;
   grid-auto-flow: row;
   grid-template-areas:
     'Temperature Sky'
