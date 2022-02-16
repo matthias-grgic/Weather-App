@@ -14,11 +14,9 @@ export default function Welcome() {
     setCity(event.target.value)
   }
 
-  const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY
-
   const submitHandler = (event) => {
     event.preventDefault()
-    FetchFromApi(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${REACT_APP_API_KEY}`, setApiData).then(() => setShowCard(true))
+    FetchFromApi(`http://localhost:4000/${city}`, setApiData).then(() => setShowCard(true))
   }
 
   console.log(apiData)
