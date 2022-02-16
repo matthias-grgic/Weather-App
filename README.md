@@ -1,7 +1,9 @@
 # Weather-app
 
 Made with `React, React Router, styled-components, ESLint, Lottie, WeatherApi`
+
 try it out - mobile version only right now
+https://weather-app-mocha-eta.vercel.app/
 
 # Install
 
