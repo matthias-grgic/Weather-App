@@ -1,6 +1,6 @@
 # Weather-app
 
-Made with `React, React Router, styled-components, ESLint, Weather Api`
+Made with `React, React Router, styled-components, ESLint, Lottie, WeatherApi`
 try it out
 
 # Install
