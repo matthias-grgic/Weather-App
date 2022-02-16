@@ -1,8 +1,6 @@
 // import styled from 'styled-components'
 import Header from './components/Header'
 import Weather from './components/Weather'
-import Introduction from './components/Introduction'
-import SlideShow from './components/SlideShow'
 import styled from 'styled-components'
 
 function App() {
@@ -10,8 +8,6 @@ function App() {
     <Website>
       <Header />
       <Weather />
-      <Introduction />
-      <SlideShow />
     </Website>
   )
 }
