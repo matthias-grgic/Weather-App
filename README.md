@@ -1,8 +1,9 @@
 # Weather-app
 
 Made with
-`React, React Router, styled-components, ESLint, Lottie, WeatherApi`
-`node.js, express, dotenv, cors, nodemon, node-fetch`
+
+- `React, React Router, styled-components, ESLint, Lottie, WeatherApi`
+- `node.js, express, dotenv, cors, nodemon, node-fetch`
 
 try it out - mobile version only atm
 https://weather-app-mocha-eta.vercel.app/
