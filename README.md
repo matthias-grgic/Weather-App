@@ -5,7 +5,7 @@ Made with
 - `React, React Router, styled-components, ESLint, Lottie, OpenWeather`
 - `node.js, express, dotenv, cors, nodemon, node-fetch`
 
-<img src="app_screenshot.png" width="auto" height="200" />
+<img src="app_screenshot.png" width="auto" height="300" />
 
 # Install
 
