@@ -24,7 +24,7 @@ router.get('/weather', (req, res) => {
   res.json({ status: 'Running' })
 })
 
-router.get('/:searchtext', async (req, res) => {
+router.get('/weather/:searchtext', async (req, res) => {
   const searchtext = req.params.searchtext
   const data = await fetchWeather(searchtext)
   res.json(data)

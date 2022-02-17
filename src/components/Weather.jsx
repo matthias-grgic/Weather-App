@@ -16,7 +16,7 @@ export default function Welcome() {
 
   const submitHandler = (event) => {
     event.preventDefault()
-    FetchFromApi(`http://localhost:4000/${city}`, setApiData).then(() => setShowCard(true))
+    FetchFromApi(`http://localhost:4000/weather/${city}`, setApiData).then(() => setShowCard(true))
   }
 
   console.log(apiData)
