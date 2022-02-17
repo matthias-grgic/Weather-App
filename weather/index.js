@@ -30,10 +30,4 @@ router.get('/weather/:searchtext', async (req, res) => {
   res.json(data)
 })
 
-router.post('/', async (req, res) => {
-  const searchtext = req.body.searchtext
-  const data = await fetchWeather(searchtext)
-  res.json(data)
-})
-
 export default router
