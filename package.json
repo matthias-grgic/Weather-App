@@ -3,8 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "client": "vite",
     "build": "vite build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "preview": "vite preview",
     "start": "node index.js",
     "server": "nodemon index.js"
