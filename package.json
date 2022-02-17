@@ -1,5 +1,5 @@
 {
-  "name": "reddit-timer",
+  "name": "weather-app",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -8,6 +8,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "preview": "vite preview",
     "start": "node index.js",
+    "postinstall": "npm install",
     "server": "nodemon index.js"
   },
   "dependencies": {
@@ -35,5 +36,9 @@
     "prettier-eslint": "^8.2.2",
     "vite": "^2.8.0"
   },
-  "type": "module"
+  "type": "module",
+  "engines": {
+    "npm": "8.1.2",
+    "node": "16.13.1"
+}
 }
