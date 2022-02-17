@@ -28,4 +28,9 @@ server.get('/', (req, res) => res.json({ success: 'Hell World!' }))
 //Server Routes
 server.use('/weather', router)
 
+//Route
+server.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, './dist', 'index.html'))
+})
+
 server.listen(Port, () => console.log(`Server is running on port ${Port}`))
