@@ -1,6 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 import router from './weather/index.js'
+import path from 'path'
 
 // NOT WORKING YET
 
@@ -16,6 +17,8 @@ import router from './weather/index.js'
 //   optionsSuccessStatus: 200,
 // }
 
+const __dirname = process.cwd()
+
 const server = express()
 server.use(cors())
 server.use(express.json())
@@ -29,6 +32,8 @@ server.get('/', (req, res) => res.json({ success: 'Hell World!' }))
 server.use('/weather', router)
 
 //Route
+server.use(express.static(path.join(__dirname, './dist')))
+
 server.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, './dist', 'index.html'))
 })
