@@ -5,8 +5,6 @@ Made with
 - `React, React Router, styled-components, ESLint, Lottie, OpenWeather`
 - `node.js, express, dotenv, cors, nodemon, node-fetch`
 
-https://weather-app-mocha-eta.vercel.app/
-
 # Install
 
 1. copy repository to your local enviroment+

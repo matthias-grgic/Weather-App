@@ -25,6 +25,7 @@ const Port = process.env.PORT || 4000
 //Test Route
 server.get('/', (req, res) => res.json({ success: 'Hell World!' }))
 
-server.use('/', router)
+//Server Routes
+server.use('/weather', router)
 
 server.listen(Port, () => console.log(`Server is running on port ${Port}`))
