@@ -37,9 +37,5 @@
     "prettier-eslint": "^8.2.2",
     "vite": "^2.8.0"
   },
-  "type": "module",
-  "engines": {
-    "npm": "8.1.2",
-    "node": "16.13.1"
-  }
+  "type": "module"
 }
