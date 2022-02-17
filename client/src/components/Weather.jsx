@@ -8,15 +8,28 @@ export default function Welcome() {
   const [apiData, setApiData] = useState({})
   const [city, setCity] = useState('')
   const [showCard, setShowCard] = useState(false)
+  const [errorOccurred, setErrorOccurred] = useState(false)
 
   const handleInput = (event) => {
     event.preventDefault()
     setCity(event.target.value)
   }
 
-  const submitHandler = (event) => {
-    event.preventDefault()
-    FetchFromApi(`/weather/${city}`, setApiData).then(() => setShowCard(true))
+  const submitHandler = async (e) => {
+    e.preventDefault()
+    try {
+      setErrorOccurred(false)
+      const response = await fetch(`/weather/${city}`)
+      const api = await response.json()
+      if (api.cod != '404') {
+        setApiData(api)
+        setShowCard(true)
+      } else {
+        setErrorOccurred(true)
+      }
+    } catch (e) {
+      console.error(e)
+    }
   }
 
   console.log(apiData)
@@ -27,7 +40,7 @@ export default function Welcome() {
       <Form onSubmit={submitHandler}>
         <input type='text' onChange={handleInput} value={city} />
       </Form>
-      <WeatherCard apiData={apiData} city={city} isLoaded={showCard} />
+      <WeatherCard apiData={apiData} city={city} showCard={showCard} errorOccurred={errorOccurred} />
     </Wrapper>
   )
 }
