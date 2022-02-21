@@ -1,13 +1,11 @@
 # Weather-app
 
-Made with
-
 - `React, React Router, styled-components, ESLint, Lottie, OpenWeather`
 - `node.js, express, dotenv, cors, nodemon, node-fetch`
 
 <img src="app_screenshot.png" width="auto" height="300" />
 
-# Install
+# Installation
 
 1. copy repository to your local enviroment
 2. run `npm install`
